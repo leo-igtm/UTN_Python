@@ -10,13 +10,13 @@ numero_mayor = 0
 
 for indice in lista_de_numero:
     if(indice == 0 and indice > numero_mayor ):
-        
-        
-        print()
+        numero_mayor=indice
+        print("El numero mayor es: ", numero_mayor)
 
 
-
+'''
 def calculo_valor_con_iva(precio_unitario,iva):
-    ''' Caculo de precio unitario mas iva de 21%'''
+    Caculo de precio unitario mas iva de 21%
     resultado = precio_unitario * (1+(iva/100))
     return resultado
+'''

@@ -44,6 +44,7 @@ menor_peso_superheroe = float(heroe_menos_pesado)
 
 lista_opciones =\
 [
+    
     "1: Mostrar Nombre de cada superhéroe ",
     "2: Mostrar Nombre de cada superhéroe y altura ",
     "3: Mostrar superhéroe más alto ",
@@ -52,6 +53,7 @@ lista_opciones =\
     "6: Mostrar  superhéroe más pesado ",
     "7: Mostrar superheroe menos pesado ",
     "8: Salir"
+    
 ]
     
   
@@ -210,15 +212,16 @@ opciones()
 
 def mostrar_menu_opciones():
 
-    lista_menu = [
-    "1 Mostrar Nombre de cada superhéroe ",
-    "2 Mostrar Nombre de cada superhéroe y altura ",
-    "3 Mostrar superhéroe más alto ",
-    "4 Mostrar superhéroe más bajo ",
-    "5 Mostrar altura promedio de los superhéroes ",
-    "6 Mostrar  superhéroe más pesado ",
-    "7 Mostrar superheroe menos pesado ",
-    "8 Salir"
+    lista_menu =\
+    [
+        "1 Mostrar Nombre de cada superhéroe ",
+        "2 Mostrar Nombre de cada superhéroe y altura ",
+        "3 Mostrar superhéroe más alto ",
+        "4 Mostrar superhéroe más bajo ",
+        "5 Mostrar altura promedio de los superhéroes ",
+        "6 Mostrar  superhéroe más pesado ",
+        "7 Mostrar superheroe menos pesado ",
+        "8 Salir"
     ]
     for lista in lista_menu:
         print(lista)
