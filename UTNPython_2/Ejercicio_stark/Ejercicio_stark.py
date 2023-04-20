@@ -42,29 +42,10 @@ menor_peso_superheroe = float(heroe_menos_pesado)
 
 
 
-lista_opciones =\
-[
-    
-    "1: Mostrar Nombre de cada superhéroe ",
-    "2: Mostrar Nombre de cada superhéroe y altura ",
-    "3: Mostrar superhéroe más alto ",
-    "4: Mostrar superhéroe más bajo ",
-    "5: Mostrar altura promedio de los superhéroes ",
-    "6: Mostrar  superhéroe más pesado ",
-    "7: Mostrar superheroe menos pesado ",
-    "8: Salir"
-    
-]
+
     
   
-def ingreso_opciones():
-    for opcion in lista_opciones:
-        opcion = input("Ingrese una opcion: ")
-        print(opcion)
-    
-    return opcion
 
-ingreso_opciones()
 
 
 
@@ -87,15 +68,16 @@ def imprimir_nombre_altura_superheroes():
 imprimir_nombre_altura_superheroes()
 
 def imprimir_superheroe_mas_alto():
+    altura_max_superheroe = lista_personajes[0]["altura"]
     for lista in range(len(lista_personajes)):
-        altura_max_superheroe = lista_personajes[lista]["altura"]
-        if lista == 0 or heroe_mas_Alto < altura_max_superheroe:# 
-            altura_max_superheroe = lista_personajes[lista]["altura"]
+        altura_max_superheroe = float(lista_personajes[lista]["altura"])
+        if lista == 0 or  altura_max_superheroe > heroe_mas_Alto :
+            heroe_mas_Alto = lista_personajes[lista]["altura"]
             nombre_lista_inicial = lista
 
     print("<-------------------------------------------->")
     print("Personaje: ",nombre_lista_inicial)    
-    print("El personaje mas alto:","Altura: {0:.2f} ".format(altura_max_superheroe))
+    print("El personaje mas alto:","Altura: {0:.2f} ".format(heroe_mas_Alto))
     return 
 
 imprimir_superheroe_mas_alto()
@@ -157,10 +139,37 @@ def imprimir_superheroe_menos_pesado():
 
 imprimir_superheroe_menos_pesado()
 
+def mostrar_menu_opciones():
 
+    lista_menu =\
+    [
+        "1 Mostrar Nombre de cada superhéroe ",
+        "2 Mostrar Nombre de cada superhéroe y altura ",
+        "3 Mostrar superhéroe más alto ",
+        "4 Mostrar superhéroe más bajo ",
+        "5 Mostrar altura promedio de los superhéroes ",
+        "6 Mostrar  superhéroe más pesado ",
+        "7 Mostrar superheroe menos pesado ",
+        "8 Salir"
+    ]
+    for opcion in lista_menu:
+        print(opcion)
+    return lista_menu
+
+mostrar_menu_opciones()
+
+def ingreso_opciones():
+    
+    for opcion in mostrar_menu_opciones():
+        opcion = input("Ingrese una opcion: ")
+        print(opcion)
+    
+    return opcion
+
+ingreso_opciones()
 
 def opciones():
-     
+    opcion = mostrar_menu_opciones() 
     continuar = True
     while continuar:
         opcion = ingreso_opciones(opcion)
@@ -210,21 +219,3 @@ opciones()
 
 # listar_opciones()
 
-def mostrar_menu_opciones():
-
-    lista_menu =\
-    [
-        "1 Mostrar Nombre de cada superhéroe ",
-        "2 Mostrar Nombre de cada superhéroe y altura ",
-        "3 Mostrar superhéroe más alto ",
-        "4 Mostrar superhéroe más bajo ",
-        "5 Mostrar altura promedio de los superhéroes ",
-        "6 Mostrar  superhéroe más pesado ",
-        "7 Mostrar superheroe menos pesado ",
-        "8 Salir"
-    ]
-    for lista in lista_menu:
-        print(lista)
-    return lista
-
-mostrar_menu_opciones()

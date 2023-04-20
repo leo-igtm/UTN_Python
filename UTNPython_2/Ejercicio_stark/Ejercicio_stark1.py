@@ -84,11 +84,15 @@ listar_promedio_superheroes(lista_personajes,"F")
 # J. Determinar cuántos superhéroes tienen cada tipo de color de ojos.
 
 def listar_superheroes_color_de_ojos(lista_personajes):
-    color_ojos={}
-    for lista in lista_personajes:
-        color= lista.get('color_ojos','Unknown')
-        color_ojos[color] = color_ojos.get(color,0) + 1
-        print("Personajes color: ",color,"Cantidad: ",color_ojos[color])
+    contador  = None
+    for lista_heroes in lista_personajes:
+       color_ojos=[]
+    for colores in color_ojos:
+        contador = 0
+        for lista_heroes in lista_personajes:
+            if(colores == lista_heroes["color_ojos"]):
+                contador +=1
+            print(contador)
     return
 listar_superheroes_color_de_ojos(lista_personajes)
 

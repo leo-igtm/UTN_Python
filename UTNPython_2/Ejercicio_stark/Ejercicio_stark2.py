@@ -13,13 +13,21 @@ from data_stark import lista_personajes
 
 def extraer_iniciales(nombre_heroe:str):
 
-    for iniciales_personaje in lista_personajes:
-        iniciales = iniciales_personaje["nombre"]
-        if nombre_heroe == ' ':
-            iniciales = '.'.join(iniciales) + '.'
-    return iniciales_personaje
+    if not nombre_heroe:
+        return 'N/A'
+    nombre_formateado = nombre_heroe.upper()
+    nombre_formateado.replace('THE','')
+    nombre_formateado.replace('-','')
+    nombre_formateado.strip()
+    for lista_heroe in nombre_formateado.split():
+        if lista_heroe :
+            inicial_formateado = '.'.join(lista_heroe[0]) + '.'
+            print(f"{inicial_formateado}")
+        else:
+            return 'N/A'
+    return 
 
-extraer_iniciales("Howard")
+extraer_iniciales("Spider-Man")
 
 
 # cadena = "Leonardo Figueroa"
