@@ -68,7 +68,7 @@ def imprimir_nombre_altura_superheroes():
 imprimir_nombre_altura_superheroes()
 
 def imprimir_superheroe_mas_alto():
-    altura_max_superheroe = lista_personajes[0]["altura"]
+    
     for lista in range(len(lista_personajes)):
         altura_max_superheroe = float(lista_personajes[lista]["altura"])
         if lista == 0 or  altura_max_superheroe > heroe_mas_Alto :
