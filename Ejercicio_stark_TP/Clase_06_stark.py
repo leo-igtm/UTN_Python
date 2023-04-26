@@ -66,4 +66,11 @@ def definir_iniciales_nombre(heroe:dict):
 definir_iniciales_nombre({'nombre':'Superman','inicial':'S'})
 
 def agregar_iniciales_nombre(lista_heroes:list):
+    
+    if type(lista_heroes) != list:
+        return False
+    
+    for lista in lista_heroes:
+    
+
     return
