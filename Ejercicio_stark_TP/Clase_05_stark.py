@@ -84,66 +84,70 @@ def imprimir_promedio_superheroes(lista_personajes:list,ingresar_genero:str):
 imprimir_promedio_superheroes(lista_personajes,"M")
 
 # J. Determinar cuántos superhéroes tienen cada tipo de color de ojos.
-def conteo_tipo_color_ojos(lista:list):
-    conteo_color_ojos = {}
-    for lista in lista_personajes:
-        color_ojos = lista['color_ojos'].upper()
-        if color_ojos not in conteo_color_ojos:
-            conteo_color_ojos[color_ojos] = 0
-        conteo_color_ojos[color_ojos] += 1 
-    return conteo_color_ojos
+# def conteo_tipo_color_ojos(lista:list):
+#     conteo_color_ojos = {}
+#     for lista in lista_personajes:
+#         color_ojos = lista['color_ojos'].upper()
+#         if color_ojos not in conteo_color_ojos:
+#             conteo_color_ojos[color_ojos] = 0
+#         conteo_color_ojos[color_ojos] += 1 
+#     return conteo_color_ojos
 
-conteo_tipo_color_ojos(lista_personajes)
+# conteo_tipo_color_ojos(lista_personajes)
 
-# M. listar todos los superhéroes agrupados por color de ojos.
+# # M. listar todos los superhéroes agrupados por color de ojos.
 
-def listar_tipo_color_ojos(lista_heroes:list,clave:str):
+# def listar_tipo_color_ojos(lista_heroes:list,clave:str):
 
-    diccionario = {}
-    conteo_color_ojos = conteo_tipo_color_ojos(lista_heroes)
+#     conteo_color_ojos = conteo_tipo_color_ojos(lista_heroes)
 
-    if not lista_heroes and clave not in lista_heroes[0]:
-        return {}
+#     if not lista_heroes and clave not in lista_heroes[0]:
+#         return {}
     
-    for heroes in lista_heroes:
-        if clave in heroes and heroes[clave] != "":
-            resultado_clave = heroes[clave]
-        else:
-            resultado_clave = 'No tiene'
+#     diccionario = {}
 
-        if resultado_clave in diccionario:
-            diccionario[resultado_clave].append(heroes)
-        else:
-            diccionario[resultado_clave] = [heroes]
+#     for heroes in lista_heroes:
+#         if clave in heroes and heroes[clave] != "":
+#             resultado_clave = heroes[clave]
+#         else:
+#             resultado_clave = 'No tiene'
+
+#         if resultado_clave in diccionario:
+#             diccionario[resultado_clave].append(heroes)
+#         else:
+#             diccionario[resultado_clave] = [heroes]
 
 
-        for conteo_color_ojos in diccionario[resultado_clave]:
-            print("Personaje Color de ojos: ",conteo_color_ojos["color_ojos"],"\n") 
-            print("<------------------------------------------------------------------------>") 
-    return diccionario
+#         for conteo_color_ojos in diccionario[resultado_clave]:
+#             print(clave + ":")
+#             print("Personaje Color de ojos: ",conteo_color_ojos["color_ojos"],"\n") 
+#             print("<------------------------------------------------------------------------>") 
+#     return diccionario
 
-listar_tipo_color_ojos(lista_personajes,'color_ojos')
+#listar_tipo_color_ojos(lista_personajes,'color_ojos')
 
 # # K. Determinar cuántos superhéroes tienen cada tipo de color de pelo.
 
-# def conteo_tipo_color_pelo(lista):
-#     conteo_color_pelo = {}
-#     for lista in lista_personajes:
-#         color_pelo = lista['color_pelo'].upper()
-#         if color_pelo not in conteo_color_pelo:
-#             conteo_color_pelo[color_pelo] = 0
-#         conteo_color_pelo[color_pelo] += 1 
+def conteo_tipo_de_busqueda(lista:list,tipo_busqueda:str):
+    conteo_diccionario = {}
+    for lista in lista_personajes:
+        conteo_tipo = lista[tipo_busqueda].upper()
+        nombre = lista["nombre"]
+        if conteo_tipo not in conteo_diccionario:
+            conteo_diccionario[conteo_tipo] = []
+        conteo_diccionario[conteo_tipo].append(nombre)
 
-#     for color_pelo,cantidad in conteo_color_pelo.items():        
-#         print("Personaje Color de pelo: ",color_pelo,"\n", "Cantidad superheroe: ",cantidad) 
-#         print("<------------------------------------------------------------------------>")
+    for conteo_tipo,nombres in conteo_diccionario.items():
+        cantidad = len(nombres)   
+        print("Personaje Color de pelo: ",conteo_tipo,"\n", "Cantidad superheroe: " ,cantidad,"\n","Nombre: ",nombres) 
+        print("<------------------------------------------------------------------------>")
 
-#     return conteo_color_pelo,cantidad
+    return conteo_diccionario,cantidad
 
-# conteo_tipo_color_pelo(lista_personajes)
+conteo_tipo_de_busqueda(lista_personajes,"color_ojos")
 
 
-# # L. Determinar cuántos superhéroes tienen cada tipo de inteligencia (En caso de no tener, Inicializarlo con ‘No Tiene’).
+# #L. Determinar cuántos superhéroes tienen cada tipo de inteligencia (En caso de no tener, Inicializarlo con ‘No Tiene’).
 # def conteo_tipo_inteligencia(lista_personajes:list,ingresar_tipo:str):
 #     conteo_tipo_inteligencia = {}
 #     for heroe in lista_personajes:
@@ -156,11 +160,34 @@ listar_tipo_color_ojos(lista_personajes,'color_ojos')
 #             conteo_tipo_inteligencia[inteligencia] = 0
 #         conteo_tipo_inteligencia[inteligencia] += 1 
 
-#     for inteligencia,cantidad in conteo_tipo_inteligencia.items():        
-#         print("Personaje tipo de inteligencia: ",inteligencia,"\n", "Cantidad superheroe: ",cantidad) 
-#         print("<------------------------------------------------------------------------>")
-    
-# imprimir_tipo_inteligencia(lista_personajes,'inteligencia')
+#     return conteo_tipo_inteligencia
+
+# conteo_tipo_inteligencia(lista_personajes)
+
+# def listar_tipo_inteligencia(lista_heroes:list,clave:str):
+#     conteo_color_ojos = conteo_tipo_inteligencia(lista_heroes)
+
+#     if not lista_heroes and clave not in lista_heroes[0]:
+#         return {}
+#     diccionario = {}
+
+#     for heroes in lista_heroes:
+#         if clave in heroes and heroes[clave] != "":
+#             resultado_clave = heroes[clave]
+#         else:
+#             resultado_clave = 'No tiene'
+
+#         if resultado_clave in diccionario:
+#             diccionario[resultado_clave].append(heroes)
+#         else:
+#             diccionario[resultado_clave] = [heroes]
+
+
+#         for conteo_color_ojos in diccionario[resultado_clave]:
+#             print("Personaje Color de tipo inteligencia : ",conteo_color_ojos["color_ojos"],"\n") 
+#             print("<------------------------------------------------------------------------>") 
+
+#     return diccionario
 
 
 

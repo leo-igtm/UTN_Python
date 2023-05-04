@@ -40,15 +40,6 @@ menor_peso_superheroe = float(heroe_menos_pesado)
 
 # mostrar_menu_opciones()
 
-
-
-
-    
-  
-
-
-
-
 def imprimir_nombre_superheroes():
     for lista in lista_personajes:
         mostrar_lista_superheroes = lista["nombre"]
