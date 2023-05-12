@@ -18,6 +18,20 @@ print(temporadas)
 #realiza una cantidad de vueltas de forma determinada
 range(10)  
 
+
+# def imprimir_superheroes_color_de_ojos(lista_personajes):
+#     contador  = None
+#     for heroes in lista_personajes:
+#        color_ojos = heroes["color_ojos"]
+#     for colores in color_ojos.keys():
+#         contador = 0
+#         print(colores)
+#         for heroes in lista_personajes:
+#             if(colores == heroes["color_ojos"]):
+#                 contador +=1
+#             print(contador)
+#     return 
+
 #Recorrer la lista contanto la cantidad de elementos que tiene la lista
 range(len(animes_90s))
 

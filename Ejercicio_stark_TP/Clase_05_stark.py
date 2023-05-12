@@ -23,14 +23,14 @@ from data_stark import lista_personajes
 # maximo_altura_superheroe = float(heroe_mas_Alto)
 # minima_altura_superheroe = float(heroe_mas_bajo)
 
-# def mostrar_heroe_masculino(lista_personajes,ingresar_genero=str):
-#     for lista in lista_personajes:
-#         nombre_heroe_masculino = lista["nombre"]
-#         genero_heroe = lista["genero"]
-#         if genero_heroe == ingresar_genero:
-#             print("Personajes: " ,nombre_heroe_masculino ,"| Genero: ", genero_heroe)
-#             print("<------------------------------------------------------------------>")
-#     return nombre_heroe_masculino,genero_heroe
+def mostrar_heroe_masculino(lista_personajes,ingresar_genero=str):
+    for lista in lista_personajes:
+        nombre_heroe_masculino = lista["nombre"]
+        genero_heroe = lista["genero"]
+        if genero_heroe == ingresar_genero:
+            print("Personajes: " ,nombre_heroe_masculino ,"| Genero: ", genero_heroe)
+            print("<------------------------------------------------------------------>")
+    return nombre_heroe_masculino,genero_heroe
 
 # mostrar_heroe_masculino(lista_personajes,"M")
 
