@@ -20,6 +20,7 @@ localidad = str(ingreso_localidad)
 estacion = str(ingreso_estacion)
 
 descuento = 0.1
+print(descuento)
 aumento = 0.2
 precio_final = 0
 while(estacion != "Invierno" and estacion != "Verano" and estacion != "Otoño" and estacion != "Primavera"):
