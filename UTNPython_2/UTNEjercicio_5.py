@@ -35,9 +35,9 @@ while(precio <0 and precio >15000):
 match estacion:
     case "Invierno":
         if(localidad =="Bariloche"):
-            aumento = 0.2
+            aumento *= 0.2
         if(localidad == "Cataratas" and localidad == "Cordoba"):
-            descuento = 0.1
+            descuento *= 0.1
         if(localidad == "Mar del Plata"):
             descuento = 0.2
     case "Otoño":
